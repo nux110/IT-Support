@@ -14,11 +14,13 @@ if (!fs.existsSync(distDir)) {
 // Copy frontend files
 const filesToCopy = [
   'helpdesk.html',
-  'admin.html',
   'styles.css',
-  'admin.css',
-  'script.js',
-  'admin.js'
+  'script.js'
+];
+const adminFilesToCopy = [
+  'admin/admin.html',
+  'admin/admin.css',
+  'admin/admin.js'
 ];
 
 filesToCopy.forEach(file => {
@@ -26,6 +28,19 @@ filesToCopy.forEach(file => {
   const destPath = path.join(distDir, file);
 
   if (fs.existsSync(srcPath)) {
+    fs.copyFileSync(srcPath, destPath);
+    console.log(`✅ Copied ${file}`);
+  } else {
+    console.log(`⚠️  File not found: ${file}`);
+  }
+});
+
+adminFilesToCopy.forEach(file => {
+  const srcPath = path.join(__dirname, file);
+  const destPath = path.join(distDir, file);
+
+  if (fs.existsSync(srcPath)) {
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
     fs.copyFileSync(srcPath, destPath);
     console.log(`✅ Copied ${file}`);
   } else {

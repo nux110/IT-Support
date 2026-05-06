@@ -6,11 +6,12 @@ A modern, responsive IT support ticket system with full-stack functionality.
 
 ```
 ├── helpdesk.html          # Main HTML file
-├── admin.html             # Admin dashboard HTML
+├── admin/                 # Admin dashboard folder
+│   ├── admin.html         # Admin dashboard HTML
+│   ├── admin.css          # Admin dashboard styles
+│   └── admin.js           # Admin dashboard JavaScript
 ├── styles.css             # Main CSS styles
-├── admin.css              # Admin dashboard styles
 ├── script.js              # Main JavaScript functionality
-├── admin.js               # Admin dashboard JavaScript
 ├── server.js              # Express.js backend (local development)
 ├── build.js               # Build script for Netlify deployment
 ├── netlify.toml           # Netlify configuration
@@ -89,6 +90,23 @@ For development with auto-restart:
 ```bash
 npm run dev
 ```
+
+## Deploy to Netlify
+
+The project is configured for Netlify deployment.
+
+1. Make sure required environment variables are set in Netlify:
+   - `SUPABASE_URL`
+   - `SUPABASE_ANON_KEY`
+2. Build the site locally (optional):
+   ```bash
+   npm run build
+   ```
+3. In Netlify, use:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+   - **Functions directory:** `netlify/functions`
+4. Deploy the repository and confirm the site is published.
 
 ## Supabase Setup Tutorial
 
@@ -248,8 +266,8 @@ The TechDesk admin dashboard provides comprehensive ticket management capabiliti
 ### Accessing the Admin Dashboard
 
 1. **From the main portal**: Click "Admin Dashboard" in the navigation
-2. **Direct URL**: Visit `admin.html` in your project
-3. **After deployment**: Visit `https://yoursite.netlify.app/admin.html`
+2. **Direct URL**: Visit `admin/admin.html` in your project
+3. **After deployment**: Visit `https://yoursite.netlify.app/admin/admin.html`
 
 ### Admin Dashboard Sections
 

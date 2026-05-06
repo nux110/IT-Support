@@ -6,7 +6,7 @@ function setPriority(btn) {
   selectedPriority = btn.dataset.p;
 }
 
-async function submitTicket() {
+async function submitTicket(button) {
   const name = document.getElementById('f-name').value.trim();
   const email = document.getElementById('f-email').value.trim();
   const department = document.getElementById('f-dept').value;
@@ -16,13 +16,14 @@ async function submitTicket() {
   const err = document.getElementById('form-error');
 
   if (!name || !email || !category || !subject || !description) {
+    err.textContent = 'Please fill in all required fields.';
     err.style.display = 'block';
     return;
   }
   err.style.display = 'none';
 
   // Show loading state
-  const submitBtn = event.target;
+  const submitBtn = button || document.querySelector('.submit-btn');
   const originalText = submitBtn.textContent;
   submitBtn.textContent = 'Submitting...';
   submitBtn.disabled = true;
@@ -44,11 +45,12 @@ async function submitTicket() {
       })
     });
 
+    const result = await response.json().catch(() => null);
     if (!response.ok) {
-      throw new Error('Failed to submit ticket');
+      const message = result?.error || result?.message || 'Failed to submit ticket';
+      throw new Error(message);
     }
 
-    const result = await response.json();
     document.getElementById('ticket-id').textContent = '#' + result.ticketId;
     document.getElementById('ticket-form').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
@@ -70,6 +72,11 @@ function resetForm() {
   document.getElementById('f-cat').value = '';
   document.getElementById('f-subject').value = '';
   document.getElementById('f-desc').value = '';
+  selectedPriority = 'low';
+  document.querySelectorAll('.priority-btn').forEach(b => b.classList.toggle('active', b.dataset.p === 'low'));
+  const err = document.getElementById('form-error');
+  err.style.display = 'none';
+  err.textContent = 'Please fill in all required fields.';
 }
 
 function toggleFaq(el) {
