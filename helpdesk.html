@@ -17,7 +17,7 @@
     <li><a href="#ticket">Submit Ticket</a></li>
     <li><a href="#status">System Status</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="admin.html" class="admin-link">Admin Dashboard</a></li>
+    <li><a href="admin/admin.html" class="admin-link">Admin Dashboard</a></li>
   </ul>
   <a href="#ticket" class="nav-cta">Get Support</a>
 </nav>
@@ -89,6 +89,8 @@
         <h3>Printers & Peripherals</h3>
         <p>Printer installation, scanner config, USB devices, monitors, docking stations, and AV equipment.</p>
       </div>
+    </div>
+  </div>
 </section>
 
 <!-- TICKET FORM -->
@@ -163,7 +165,7 @@
       <div id="form-error" style="display:none;color:var(--danger);font-size:0.85rem;margin-bottom:1rem;padding:10px 14px;background:rgba(255,91,91,0.08);border-radius:8px;border:1px solid rgba(255,91,91,0.2)">
         Please fill in all required fields.
       </div>
-      <button class="submit-btn" onclick="submitTicket()">Submit Support Request →</button>
+      <button type="button" class="submit-btn" onclick="submitTicket(this)">Submit Support Request →</button>
     </div>
     <div id="form-success">
       <div class="success-icon">✓</div>
