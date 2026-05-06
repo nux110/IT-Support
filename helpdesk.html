@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechDesk — IT Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Tech<span>Desk</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ticket">Submit Ticket</a></li>
+    <li><a href="#status">System Status</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="admin.html" class="admin-link">Admin Dashboard</a></li>
+  </ul>
+  <a href="#ticket" class="nav-cta">Get Support</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <h1>
+      IT Help When<br>
+      <span class="line2">You Need It Most</span>
+    </h1>
+    <p>Fast, expert IT support for your entire organization. From password resets to network infrastructure — we've got you covered.</p>
+    <div class="hero-actions">
+      <a href="#ticket" class="btn-primary">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        Submit a Ticket
+      </a>
+      <a href="tel:+18005551234" class="btn-secondary">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call Us Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num">2<span>min</span></div>
+      <div class="stat-label">Avg. first response</div>
+    </div>
+    <div>
+      <div class="stat-num">98<span>%</span></div>
+      <div class="stat-label">Customer satisfaction</div>
+    </div>
+    <div>
+      <div class="stat-num">24<span>/7</span></div>
+      <div class="stat-label">Always available</div>
+    </div>
+    <div>
+      <div class="stat-num">12<span>k+</span></div>
+      <div class="stat-label">Tickets resolved</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-tag">What We Handle</div>
+    <h2 class="section-title">Full-Spectrum IT Support</h2>
+    <p class="section-sub">From everyday issues to complex infrastructure problems, our team handles it all.</p>
+    <div class="services-grid">
+      <div class="service-card" style="--card-accent:#4f7cff;--icon-bg:rgba(79,124,255,0.12)">
+        <div class="service-icon">💻</div>
+        <h3>Desktop & Laptop Support</h3>
+        <p>Hardware troubleshooting, OS installation, driver updates, performance tuning, and data recovery.</p>
+      </div>
+      <div class="service-card" style="--card-accent:#00d4aa;--icon-bg:rgba(0,212,170,0.12)">
+        <div class="service-icon">🌐</div>
+        <h3>Network & Connectivity</h3>
+        <p>Wi-Fi issues, VPN setup, firewall configuration, network outages, and bandwidth optimization.</p>
+      </div>
+      <div class="service-card" style="--card-accent:#ffb347;--icon-bg:rgba(255,179,71,0.12)">
+        <div class="service-icon">🖨️</div>
+        <h3>Printers & Peripherals</h3>
+        <p>Printer installation, scanner config, USB devices, monitors, docking stations, and AV equipment.</p>
+      </div>
+</section>
+
+<!-- TICKET FORM -->
+<section id="ticket" class="ticket-section">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-tag" style="text-align:center;">Get Help Fast</div>
+    <h2 class="section-title" style="text-align:center;">Submit a Support Ticket</h2>
+    <p class="section-sub" style="margin:0 auto 2.5rem;">Fill in the details below and we'll assign a technician right away.</p>
+  </div>
+  <div class="ticket-container">
+    <div class="ticket-header">
+      <div class="ticket-icon">🎫</div>
+      <div>
+        <h2>New Support Request</h2>
+        <p>Average response time: <strong style="color:var(--success)">2 minutes</strong></p>
+      </div>
+    </div>
+    <div id="ticket-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="f-name" placeholder="Juan dela Cruz">
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="f-email" placeholder="juan@company.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Department</label>
+          <select id="f-dept">
+            <option value="">Select department…</option>
+            <option>Finance</option>
+            <option>Marketing</option>
+            <option>City building office</option>
+             <option>City environmental and natural resources office</option>
+              <option>City information office</option>
+               <option>Peso office</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Category *</label>
+          <select id="f-cat">
+            <option value="">Select issue type…</option>
+            <option>Hardware Problem</option>
+            <option>Software / App Issue</option>
+            <option>Network / Internet</option>
+            <option>Printer / Scanner</option>
+            <option>New Device Setup</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Priority Level *</label>
+        <div class="priority-row">
+          <button class="priority-btn active" data-p="low" style="--btn-color:#00d4aa;--btn-bg:rgba(0,212,170,0.08)" onclick="setPriority(this)">🟢 Low</button>
+          <button class="priority-btn" data-p="medium" style="--btn-color:#ffb347;--btn-bg:rgba(255,179,71,0.08)" onclick="setPriority(this)">🟡 Medium</button>
+          <button class="priority-btn" data-p="high" style="--btn-color:#ff5b5b;--btn-bg:rgba(255,91,91,0.08)" onclick="setPriority(this)">🔴 High</button>
+          <button class="priority-btn" data-p="critical" style="--btn-color:#ff5b5b;--btn-bg:rgba(255,91,91,0.12)" onclick="setPriority(this)">🚨 Critical</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Subject *</label>
+        <input type="text" id="f-subject" placeholder="Brief description of the issue">
+      </div>
+      <div class="form-group">
+        <label>Describe Your Issue *</label>
+        <textarea id="f-desc" placeholder="Please describe what happened, what you were doing when it occurred, and any error messages you saw…"></textarea>
+      </div>
+      <div id="form-error" style="display:none;color:var(--danger);font-size:0.85rem;margin-bottom:1rem;padding:10px 14px;background:rgba(255,91,91,0.08);border-radius:8px;border:1px solid rgba(255,91,91,0.2)">
+        Please fill in all required fields.
+      </div>
+      <button class="submit-btn" onclick="submitTicket()">Submit Support Request →</button>
+    </div>
+    <div id="form-success">
+      <div class="success-icon">✓</div>
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.5rem;">Ticket Submitted!</h3>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Your ticket <strong id="ticket-id" style="color:var(--accent)"></strong> has been created. You'll receive a confirmation email shortly.</p>
+      <button class="btn-secondary" onclick="resetForm()">Submit Another Ticket</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS -->
+<section id="status">
+  <div class="section-inner">
+    <div class="section-tag">Live Monitoring</div>
+    <h2 class="section-title">System Status</h2>
+    <p class="section-sub">Real-time status of all IT services and infrastructure.</p>
+    <div class="status-board">
+      <div class="status-header">
+        <h3>All Services</h3>
+        <div class="all-green">
+          <div class="dot-green"></div>
+          All systems operational
+        </div>
+      </div>
+      <ul class="status-list">
+        <li class="status-item"><span class="status-name">Email (Microsoft 365)</span><span class="status-badge badge-ok">Operational</span></li>
+        <li class="status-item"><span class="status-name">Corporate VPN</span><span class="status-badge badge-ok">Operational</span></li>
+        <li class="status-item"><span class="status-name">Internet / WAN</span><span class="status-badge badge-ok">Operational</span></li>
+        <li class="status-item"><span class="status-name">File Servers / NAS</span><span class="status-badge badge-ok">Operational</span></li>
+        <li class="status-item"><span class="status-name">Active Directory / SSO</span><span class="status-badge badge-ok">Operational</span></li>
+        <li class="status-item"><span class="status-name">CCTV / Door Access</span><span class="status-badge badge-warn">Degraded</span></li>
+        <li class="status-item"><span class="status-name">Backup Systems</span><span class="status-badge badge-ok">Operational</span></li>
+        <li class="status-item"><span class="status-name">Help Desk Portal</span><span class="status-badge badge-ok">Operational</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--surface)">
+  <div class="section-inner">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">Frequently Asked</h2>
+    <p class="section-sub">Quick answers to the most common IT questions.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I reset my password? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Go to the company login page and click "Forgot Password." You'll receive a reset link to your registered email. If you don't receive it, submit a ticket or call our help desk and we'll reset it manually after verifying your identity.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I connect to the VPN from home? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Download the VPN client from the IT portal, install it, and log in with your corporate credentials. If you haven't been set up for VPN access yet, submit a request through this portal and we'll get you set up within 1 business day.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">My computer is running slowly. What should I do? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">First, try restarting your computer — this resolves most performance issues. Make sure your OS and software are up to date. If the problem persists, submit a ticket with details about what's running slowly and when it started, and a technician will assess whether you need a hardware upgrade or software cleanup.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">I accidentally deleted important files. Can they be recovered? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Check the Recycle Bin first. If files were stored on network drives, we may be able to restore from backup — contact us immediately with the file names and folder paths. The sooner you report it, the better the chances of recovery. Do not save new files to the same location in the meantime.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">I think I clicked a phishing link. What do I do? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Don't panic — disconnect your computer from the network immediately (unplug the Ethernet or turn off Wi-Fi), then call our help desk right away. Do not shut down your computer as we may need to preserve evidence. We'll scan for malware, change your credentials, and determine if any data was compromised.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I set up my email on my phone? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">We support iOS and Android devices. Download the Microsoft Outlook app or use the native mail app with Exchange settings. Submit a ticket and a technician will walk you through the setup or enroll your device in our MDM system if required by company policy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="section-inner">
+    <div class="contact-strip">
+      <div>
+        <h2>Still need help?</h2>
+        <p>Our team is standing by around the clock. Reach us any way you prefer.</p>
+      </div>
+      <div class="contact-channels">
+        <a href="tel:+639055613231" class="channel-btn"><span class="channel-icon">📞</span> +639 055 613 231</a>
+        <a href="mailto:it.tech.desk.ops@gmail.com" class="channel-btn"><span class="channel-icon">✉️</span> it.tech.desk.ops@gmail.com</a>
+        <a href="#ticket" class="channel-btn"><span class="channel-icon">💬</span> Live Chat</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Tech<span>Desk</span></a>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+  <span>© 2026 TechDesk IT Support. All rights reserved.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDesk Admin - IT Support Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="admin-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>TechDesk Admin</h2>
+            </div>
+            <div class="nav-links">
+                <a href="helpdesk.html" class="nav-link">&larr; Back to Portal</a>
+                <button id="refresh-btn" class="btn-secondary">Refresh</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>IT Support Dashboard</h1>
+            <p>Manage and monitor support tickets</p>
+        </div>
+    </header>
+
+    <!-- Stats Cards -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card" id="total-tickets">
+                <div class="stat-icon">T</div>
+                <div class="stat-content">
+                    <h3 id="total-count">0</h3>
+                    <p>Total Tickets</p>
+                </div>
+            </div>
+            <div class="stat-card" id="open-tickets">
+                <div class="stat-icon">O</div>
+                <div class="stat-content">
+                    <h3 id="open-count">0</h3>
+                    <p>Open Tickets</p>
+                </div>
+            </div>
+            <div class="stat-card" id="in-progress-tickets">
+                <div class="stat-icon">P</div>
+                <div class="stat-content">
+                    <h3 id="in-progress-count">0</h3>
+                    <p>In Progress</p>
+                </div>
+            </div>
+            <div class="stat-card" id="resolved-tickets">
+                <div class="stat-icon">R</div>
+                <div class="stat-content">
+                    <h3 id="resolved-count">0</h3>
+                    <p>Resolved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters and Search -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search tickets by ID, name, email, or subject...">
+                <button id="search-btn">🔍</button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="open">Open</button>
+                <button class="filter-btn" data-filter="in-progress">In Progress</button>
+                <button class="filter-btn" data-filter="resolved">Resolved</button>
+                <button class="filter-btn" data-filter="closed">Closed</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tickets Table -->
+    <section class="tickets-section">
+        <div class="tickets-container">
+            <div class="table-header">
+                <h2>Support Tickets</h2>
+                <div class="table-actions">
+                    <span id="tickets-count">Loading tickets...</span>
+                </div>
+            </div>
+
+            <div class="tickets-table-container">
+                <table class="tickets-table" id="tickets-table">
+                    <thead>
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Category</th>
+                            <th>Priority</th>
+                            <th>Subject</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tickets-tbody">
+                        <tr>
+                            <td colspan="10" class="loading-row">Loading tickets...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticket Detail Modal -->
+    <div id="ticket-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Ticket Details</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Ticket details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Update Modal -->
+    <div id="status-modal" class="modal">
+        <div class="modal-content small-modal">
+            <div class="modal-header">
+                <h3>Update Ticket Status</h3>
+                <button class="modal-close" id="status-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="status-update-form">
+                    <p>Update status for ticket: <strong id="status-ticket-id"></strong></p>
+                    <div class="status-options">
+                        <label class="status-option">
+                            <input type="radio" name="status" value="open">
+                            <span class="status-badge open">Open</span>
+                        </label>
+                        <label class="status-option">
+                            <input type="radio" name="status" value="in-progress">
+                            <span class="status-badge in-progress">In Progress</span>
+                        </label>
+                        <label class="status-option">
+                            <input type="radio" name="status" value="resolved">
+                            <span class="status-badge resolved">Resolved</span>
+                        </label>
+                        <label class="status-option">
+                            <input type="radio" name="status" value="closed">
+                            <span class="status-badge closed">Closed</span>
+                        </label>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="status-cancel" class="btn-secondary">Cancel</button>
+                        <button id="status-update" class="btn-primary">Update Status</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="admin.js"></script>
+</body>
+</html>

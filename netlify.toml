@@ -1,0 +1,21 @@
+# Netlify Deployment Configuration
+
+# Build settings
+[build]
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Environment variables (set these in Netlify dashboard)
+# SUPABASE_URL=your_supabase_project_url
+# SUPABASE_ANON_KEY=your_supabase_anon_key
+
+# Redirect rules for SPA
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
